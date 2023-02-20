@@ -43,6 +43,7 @@ export class App extends Component {
         <Section title="Statistics">
           {this.countFeedbackTotal() ? (
             <Statistics
+              className={css.statistic__item}
               options={this.state}
               total={this.countFeedbackTotal()}
               positivePercentage={this.positiveFeedbackHandler()}

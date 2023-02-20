@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import css from './FeedBack.module.css';
+import css from '../FeedbackBtn/FeedBack.module.css';
 
 const FeedbackBtn = ({ options, leaveFeedbackHandler }) => {
   return (
@@ -15,7 +15,7 @@ const FeedbackBtn = ({ options, leaveFeedbackHandler }) => {
                 leaveFeedbackHandler(option);
               }}
             >
-              {option}
+              {option.toUpperCase()}
             </button>
           </li>
         );
