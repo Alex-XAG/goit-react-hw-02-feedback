@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedBack from './Feedback/FeedBack';
+import Feedback from './Feedback/Feedback';
 
 export const App = () => {
   return (
@@ -14,7 +14,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <FeedBack />
+      <Feedback />
     </div>
   );
 };
