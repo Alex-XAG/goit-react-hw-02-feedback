@@ -27,6 +27,7 @@ export class App extends React.Component {
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
     return (
       <div
         style={{
@@ -41,19 +42,21 @@ export class App extends React.Component {
       >
         <Section title="Please live feedback">
           <FeedbackOptions
-            options={this.state}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
 
         <Section title="Statistics">
-          {isNaN(this.countPositiveFeedbackPercentage()) ? (
+          {isNaN(this.countPositiveFeedbackPercentage()) && (
             <Notification message="There is no feedback" />
-          ) : (
+          )}
+
+          {!isNaN(this.countPositiveFeedbackPercentage()) && (
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
+              good={good}
+              neutral={neutral}
+              bad={bad}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
